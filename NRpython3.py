@@ -1,0 +1,17 @@
+print(2+3)
+print("Hello Hemendra, Welcome to Python Classes")
+print(5*"Hem")
+print(2*"Hem\n")
+print('Testing Strings')
+print("Testing Strings")
+#print('Testing's String')
+print('Testing/n string')
+print(r'Testing/ns string')
+print("Testing's Sring")
+
+name = "Spring"
+print(name[0])
+print(name[0:20])
+print(name[-1])
+print("my "+ name[0:4])
+print("my "+ name[3:0])
