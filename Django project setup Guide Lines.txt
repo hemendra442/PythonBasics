@@ -1,0 +1,117 @@
+
+Install Virtual Studio Code IDE and Python, then follow below instructions..
+
+1. Install venv
+	pip install virtualenvwrapper-win
+	Successfully installed virtualenvwrapper-win-1.2.6
+
+2. create virtaul environment
+	mkvirtualenv {name}
+		I given mkvirtualenv django
+creator CPython3Windows(dest=C:\Users\Hemendra\Envs\django)
+(django) C:\Users\Hemendra>
+
+3. Install django
+	pip install django
+Successfully installed asgiref-3.2.7 django-3.0.4 pytz-2019.3 sqlparse-0.3.1
+
+4. created a folder for Django projects
+	mkdir DjangoProjects
+5. create a project inside created a projects folder
+	so, cd DjangoProjects
+		django-admin startproject {project name}
+		It created to folders, Projectname folder, manage.py
+6. Run webserver
+ 	cd {project}
+	python manage.py runserver
+     able to see successfully installed django at http://127.0.0.1:8000/
+
+
+7. Go to the project folder , run
+	python manage.py startapp {appname}
+   It will create a app folder in VSC and in proj folder
+
+>>>>>>>>>>>>   >>>>>>>>>>>>
+Iussue : Unable to use created venv django ??
+use this command for utilizing existing command
+
+C:\Users\Hemendra\Envs\django\Scripts\activate
+ -->>> (django) C:\Users\Hemendra>
+or use workon command
+workon {virtual env name}
+workon django --- in my system
+
+for Deactivate
+(django) C:\Users\Hemendra>deactivate
+C:\Users\Hemendra>
+>>>>>>>>>>>>   >>>>>>>>>>>>
+
+Git
+for VSC
+1. Click on Source Control
+2. click on .... at source control
+3. select stage all changes.
+4. select commit all -- if not commited successfully, it's due to remote repository is not specified.
+
+Go to cmd..
+
+git push origin master
+git push https://github.com/hemendra442/Enagic.git master
+
+
+'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+5432 port 
+
+user detials
+postgres
+Jh$97857
+
+pgAdmin url
+http://127.0.0.1:50701/browser/
+
+sqlite3 data base connection settings in Django
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+Mysql Database connection settings in Django
+'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django',
+        'USER': 'root',
+        'PASSWORD':'Jh$97857',
+        'HOST': 'localhost',
+        'PORT': '3306',
+
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+Issue:
+python3 -m pip install PyMySQL
+in admin.py
+import pymysql
+pymysql.install_as_MySQLdb()
+
+Issues Resolved : mysqlclient 1.3.13 or newer is required; you have %s.' % Database
+location : /home/username/.local/share/virtualenvs/project-env/lib/python3.7/site-packages/django/db/backends/mysql
+
+if version < (1, 3, 13):
+   pass
+   '''
+   raise ImproperlyConfigured(
+       'mysqlclient 1.3.13 or newer is required; you have %s.'
+       % Database.__version__
+   )
+   '''
+
+
+
+
+
+
